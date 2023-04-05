@@ -20,8 +20,8 @@ colSums(is.na(dataset))
 library('caTools')
 names(dataset)
 split=sample.split(dataset$price,SplitRatio = .8)
-train=subset(dataset,split=TRUE)
-test=subset(dataset,split=FALSE)
+train=subset(dataset,split==TRUE)
+test=subset(dataset,split==FALSE)
 
 #Multiple linear regression training
 
@@ -39,7 +39,7 @@ paste('The mean square error for this data set is:',mse)
 #R-square
 summary(mlr)
 
-#This model has an Rsquared value of 91.95%, good model
+#This model has an Rsquared value of 92.02%, good model
 
 #testing set prediction
 y_pred=predict(mlr,newdata = test)
@@ -62,8 +62,8 @@ data.frame(new[c(6)],predict(mlr,newdata=new_x))
 
 names(dataset)
 split=sample.split(dataset$price,SplitRatio = .9)
-train=subset(dataset,split=TRUE)
-test=subset(dataset,split=FALSE)
+train=subset(dataset,split==TRUE)
+test=subset(dataset,split==FALSE)
 
 #Multiple linear regression training
 
@@ -81,7 +81,7 @@ paste('The mean square error for this data set is:',mse)
 #R-square
 summary(mlr)
 
-#This model has an Rsquared value of 91.95%, good model
+#This model has an Rsquared value of 91.98%, good model
 
 #testing set prediction
 y_pred=predict(mlr,newdata = test)
@@ -104,8 +104,8 @@ data.frame(new[c(6)],predict(mlr,newdata=new_x))
 
 names(dataset)
 split=sample.split(dataset$price,SplitRatio = .6)
-train=subset(dataset,split=TRUE)
-test=subset(dataset,split=FALSE)
+train=subset(dataset,split==TRUE)
+test=subset(dataset,split==FALSE)
 
 #Multiple linear regression training
 
@@ -123,7 +123,7 @@ paste('The mean square error for this data set is:',mse)
 #R-square
 summary(mlr)
 
-#This model has an Rsquared value of 91.95%, good model
+#This model has an Rsquared value of 92.04%, good model
 
 #testing set prediction
 y_pred=predict(mlr,newdata = test)
